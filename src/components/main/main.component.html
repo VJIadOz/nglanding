@@ -1,0 +1,38 @@
+<main class="main">
+  <section class="calendarWrap">
+    <app-calendar></app-calendar>
+  </section>
+  <section class="section violationServices">
+    <h2 class="section-title violationServices__title">Распределение индикаторов нарушений по службам</h2>
+    <ul class="list-reset violationServices__list">
+      @for (item of chartsDepartmentData; track $index) {
+      <li class="violationServices__item">
+        <main-doughnut-chart [data]="item"></main-doughnut-chart>
+      </li>
+      }
+    </ul>
+  </section>
+  <section class="section violationRoads">
+    <h2 class="section-title violationRoads__title">Распределение индикаторов нарушений по дорогам</h2>
+    <main-line-chart [data]="chartsRoadData"></main-line-chart>
+  </section>
+  <section class="section violationRange">
+    <h2 class="section-title violationRange__title">Динамика изменения индикаторов красной зоны за последние 6 месяцев -
+      топ 5</h2>
+    <div class="violationRange__content">
+      <ol class="list-reset violationRange__list">
+        <li class="violationRange__item violationRange__item_1">Количество отказов в работе технических средств всех
+          категорий по сравнению с
+          аналогичным периодом прошлого года</li>
+        <li class="violationRange__item violationRange__item_2">Наличие ДСПГ в группе риска "2" ( в соотношении к штату
+          ДСПГ )</li>
+        <li class="violationRange__item violationRange__item_3">Нарушение регламента переговоров</li>
+        <li class="violationRange__item violationRange__item_4">Работа локомотивных бригад более 2-х ночей подряд</li>
+        <li class="violationRange__item violationRange__item_5">Повторные отступления ВИКС IV степени за квартал</li>
+      </ol>
+      <div class="violationRange__chartWrap">
+        <p-chart class="violationRange__chart" type="line" [data]="chartsRedZone" [options]="chartsRedOptions" />
+      </div>
+    </div>
+  </section>
+</main>

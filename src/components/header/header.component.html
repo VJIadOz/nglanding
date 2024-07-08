@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="header-container">
+    <div class="header__left">
+      <a href="#" class="header__logo">
+        <svg version="1.1" viewBox="0 0 360 158" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#FFF">
+            <path
+              d="m252 14v5.77h49.5c3.3 0 8.25 0 11.5 3.3s3.3 8.25 3.3 11.5v49.5c0 3.3 0 8.25-3.3 11.5-3.3 3.3-8.25 3.3-11.5 3.3h-23.9c-4.12 0-9.49 0-11.5-4.54-2.06-4.54 0.824-8.66 3.3-12l32.2-42.9h-49.5l-19.8 26.4c-3.32 4.42-6.19 8.25-6.19 13.2 0 4.95 2.67 8.51 6.19 13.2l4.95 6.6c4.95 6.6 9.9 13.2 16.5 16.5 6.6 3.3 14.4 3.3 25.2 3.3h21.4c12.4 0 30.9 0 43.3-12.4s12.4-30.5 12.4-37.1v-19.8c0-6.6 0-24.7-12.4-37.1s-30.9-12.4-43.3-12.4l-34.2-0.011c-3.3-1e-3 -7.42 0-10.7 3.3-3.3 3.3-3.3 7.42-3.3 10.7" />
+            <polyline points="193 39.6 242 39.6 183 119 134 119 193 39.6" />
+            <path
+              d="m0 53.6c0-3.3 0-7.42 3.3-10.7s7.42-3.3 10.7-3.3h82.9c10.7 0 18.6 0 25.2 3.3s11.5 9.9 16.5 16.5l4.95 6.6c3.51 4.68 6.19 8.25 6.19 13.2 0 4.95-2.87 8.78-6.19 13.2l-19.8 26.4h-49.5l32.2-42.9c2.47-3.3 5.36-7.42 3.3-12-2.06-4.54-7.42-4.54-11.5-4.54h-38.8v99h-39.6v-99h-19.8v-5.78" />
+          </g>
+        </svg>
+      </a>
+      <h1 class="header__title">АРМ выходных форм комплекса ДИСКОР НП</h1>
+    </div>
+    <p-tabMenu class="header__nav" [model]="items" />
+    <div class="header__calendarWrap">
+      <app-calendar></app-calendar>
+    </div>
+    <div class="header__log log">
+      <span class="log__name">Черных Евгений</span>
+      <div class="log__divider"></div>
+      <button class="btn-reset log__btn">Выход</button>
+    </div>
+  </div>
+</header>

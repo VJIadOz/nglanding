@@ -1,0 +1,16 @@
+.footer{
+  padding: 20px 0;
+  background-color: black;
+}
+.footer-container{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 40px;
+}
+.footer__copyright, .footer__build{
+  color: grey;
+}

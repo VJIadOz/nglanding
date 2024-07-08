@@ -1,0 +1,33 @@
+.sidebar__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+::ng-deep .sidebar__btn button{
+  width: auto;
+  padding: 10px;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+
+::ng-deep .sidebar__btn_1:hover button,
+::ng-deep .sidebar__btn_2:hover button,
+::ng-deep .sidebar__btn_3:hover button{
+  background-color: #939393;
+}
+
+::ng-deep .sidebar__btn_1 button,
+::ng-deep .sidebar__btn_2 button,
+::ng-deep .sidebar__btn_3 button{
+  background-color: #414040;
+  color: #CFD3D6;
+  border: 0.5px solid #CFD3D6;
+}
