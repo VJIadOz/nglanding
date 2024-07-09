@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { ChartModule } from 'primeng/chart';
+import { Options } from "../../shared/charts-options";
 
 
 @Component({
@@ -10,10 +11,10 @@ import { ChartModule } from 'primeng/chart';
   imports: [ChartModule]
 })
 export class DoughnutChartComponent implements OnInit {
-  @Input() data: any
-  metadata: any
-  options: any = {}
-  labelInside: any = {}
+  @Input() data!: {label: {department: string, percents: string}, labels: Array<string>, datasets: Array<{data: Array<number>}>}
+  metadata!: {labels: Array<string>, datasets: Array<{data: Array<number>}>}
+  options!: Options
+  labelInside!: {department: string, percents: string}
 
   ngOnInit(): void {
     this.labelInside = {
