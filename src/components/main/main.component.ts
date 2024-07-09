@@ -3,6 +3,7 @@ import { ChartModule } from 'primeng/chart';
 import { CalendarComponent } from "../../shared/calendar/calendar.component";
 import { DoughnutChartComponent } from "../../shared/doughnut-chart/doughnut-chart.component";
 import { LineChartComponent } from "../../shared/line-chart/line-chart.component";
+import { Options } from "../../shared/charts-options";
 
 
 @Component({
@@ -13,14 +14,12 @@ import { LineChartComponent } from "../../shared/line-chart/line-chart.component
   imports: [CalendarComponent, DoughnutChartComponent, ChartModule, LineChartComponent]
 })
 export class MainComponent implements OnInit {
-  chartsDepartmentData: any
-  chartsDepartmentOptions: any
+  chartsDepartmentData!: Array<{ label: { department: string, percents: string }, labels: Array<string>, datasets: Array<{ data: Array<number> }> }>
 
-  chartsRoadData: any
-  chartsRoadOptions: any
+  chartsRoadData!: { labels: Array<string>, datasets: Array<{ colorLine: string, data: Array<number> }> }
 
-  chartsRedZone: any
-  chartsRedOptions: any
+  chartsRedZone!: { labels: Array<string>, datasets: Array<{ borderColor: string, data: Array<number> }> }
+  chartsRedOptions!: Options
 
   ngOnInit(): void {
     const documentStyle = getComputedStyle(document.documentElement);
@@ -135,16 +134,15 @@ export class MainComponent implements OnInit {
     }
 
     this.chartsRedZone = {
-      labels: ['','Октябрь', 'Ноябрь', 'Декабрь', 'Январь', 'Февраль', 'Март', ''],
+      labels: ['', 'Октябрь', 'Ноябрь', 'Декабрь', 'Январь', 'Февраль', 'Март', ''],
       datasets: [
         {
-          barPercentage: 1,
           borderColor: 'orange',
           data: [90, 90, 100, 49, 80, 80, 80, 80, 100, 80]
         },
         {
           borderColor: 'green',
-          data: [49, 20, 49, 70, 45, 80, 17, 50,49]
+          data: [49, 20, 49, 70, 45, 80, 17, 50, 49]
         },
         {
           borderColor: 'red',
@@ -164,7 +162,9 @@ export class MainComponent implements OnInit {
     this.chartsRedOptions = {
       pointStyle: false,
       plugins: {
-        legend: false,
+        legend: {
+          display: false
+        },
       },
       scales: {
         x: {
