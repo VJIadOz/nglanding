@@ -1,5 +1,6 @@
-import { Component, Input, OnInit} from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { ChartModule } from 'primeng/chart';
+import { Options } from "../../shared/charts-options";
 
 @Component({
   selector: 'main-line-chart',
@@ -9,10 +10,9 @@ import { ChartModule } from 'primeng/chart';
   imports: [ChartModule]
 })
 export class LineChartComponent implements OnInit {
-  @Input() data: any
-  metadata: any
-  options: any = {}
-  labelInside: any = {}
+  @Input() data!: {labels: Array<string>, datasets: Array<{colorLine: string, data: Array<number>}>}
+  metadata!: { labels: Array<string>, datasets: Array<{ data: Array<number> }> }
+  options!: Options
 
   ngOnInit(): void {
     this.metadata = {
