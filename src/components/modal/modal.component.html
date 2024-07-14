@@ -1,0 +1,22 @@
+<p-dialog
+  [modal]="true"
+  [draggable]="false"
+  [visible]="visible"
+  [dismissableMask]="true"
+  [showHeader]="false"
+  styleClass="modal"
+  (visibleChange)="visibleChange.emit(false)"
+  >
+    <h2 class="modal__header">Детализированные графики показателей службы ЦД по дорогам</h2>
+    <div class="modal__chartsWrap">
+      <div class="modal__chartsTop">
+        <div class="modal__chartLeft">
+          <!-- <p-chart type="doughnut" [data]="metadata" [options]="options"/> -->
+        </div>
+        <div class="modal__chartRight">
+          <p-chart type="bar" [data]="metadataBar" [options]="optionsBar" [plugins]="[chartDataLabelsPlugin]"/>
+        </div>
+      </div>
+      <div class="modal__chartsBottom"></div>
+    </div>
+</p-dialog>

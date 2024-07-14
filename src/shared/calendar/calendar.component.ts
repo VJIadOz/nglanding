@@ -1,7 +1,6 @@
-import { Component  } from "@angular/core";
+import { Component, OnInit  } from "@angular/core";
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-calendar',

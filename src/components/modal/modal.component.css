@@ -1,0 +1,23 @@
+:host>>>.modal {
+  width: 90vw;
+  background-color: #414040;
+}
+
+.modal__header {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+.modal__chartsTop {
+  display: flex;
+}
+
+.modal__chartLeft {
+  flex-basis: 10%;
+}
+
+.modal__chartRight {
+  flex-basis: 90%;
+}

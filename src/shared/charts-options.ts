@@ -14,9 +14,14 @@ export interface Options {
       stacked?: boolean,
       ticks?: {
         color?: string,
+        font?: {
+          size?: number
+        }
       },
       grid?: {
-        display?: boolean
+        color?: string,
+        display?: boolean,
+        drawTicks?: boolean
       },
       border?: {
         display?: boolean
@@ -32,12 +37,17 @@ export interface Options {
       }
       ticks?: {
         color?: string,
+        font?: {
+          size?: number
+        },
+        padding?: number,
         stepSize?: number,
         display?: boolean
       },
       grid?: {
         color?: string,
-        display?: boolean
+        display?: boolean,
+        drawTicks?: boolean
       },
       border?: {
         display?: boolean

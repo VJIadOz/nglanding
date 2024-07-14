@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { ChartModule } from 'primeng/chart';
-import { Options } from "../../shared/charts-options";
+import { Options } from "../charts-options";
 
 @Component({
   selector: 'main-line-chart',
@@ -9,20 +9,25 @@ import { Options } from "../../shared/charts-options";
   styleUrl: './line-chart.component.css',
   imports: [ChartModule]
 })
+
 export class LineChartComponent implements OnInit {
-  @Input() data!: {labels: Array<string>, datasets: Array<{colorLine: string, data: Array<number>}>}
-  metadata!: { labels: Array<string>, datasets: Array<{ data: Array<number> }> }
+  @Input() data!: { labels: Array<string>, datasets: Array<{ data: Array<number> }> }
+  metadata!: { labels: Array<string>, datasets: Array<{ data: Array<number>, borderColor: string }> }
   options!: Options
+  colors: Array<string> = ["--chart-color-2", "--chart-color-1", "--chart-color-3", "--chart-color-5", "--chart-color-6"]
 
   ngOnInit(): void {
+    const documentStyle = getComputedStyle(document.documentElement);
     this.metadata = {
       labels: this.data.labels,
-      datasets: (this.data.datasets).map((item: any) => (
+      datasets: (this.data.datasets).map((item: { data: Array<number> }, index: number) => (
         {
           data: item.data,
-          type: "bar",
-          backgroundColor: item.colorLine,
-          barThickness: 20,
+          fill:  {
+            target: "origin",
+            above: documentStyle.getPropertyValue(this.colors[index])+"10",
+          },
+          borderColor: documentStyle.getPropertyValue(this.colors[index]),
         })
       )
     }
@@ -30,15 +35,19 @@ export class LineChartComponent implements OnInit {
     this.options = {
       responsive: true,
       maintainAspectRatio: false,
-      aspectRatio: 1.5,
+      pointStyle: false,
       plugins: {
-        legend: { display: false },
+        legend: {
+          display: false
+        },
       },
       scales: {
         x: {
-          stacked: true,
           ticks: {
-            color: "#fff"
+            color: "#fff",
+            font: {
+              size: 12
+            }
           },
           grid: {
             display: false
@@ -48,28 +57,27 @@ export class LineChartComponent implements OnInit {
           }
         },
         y: {
-          labels: {
-            show: true,
-            fontColor: 'black',
-            fontSize: 12,
-            padding: 5
-          },
-          stacked: true,
           ticks: {
-            display: false
+            color: "#fff",
+            stepSize: 20,
+            padding: 10,
+            font: {
+              size: 14
+            }
           },
           grid: {
-            display: false
+            color: "#939393",
+            drawTicks: false
           },
           border: {
             display: false
           }
         }
-      }
+      },
     }
   }
-
 }
+
 
 
 

@@ -1,0 +1,10 @@
+.lineChart__wrap{
+  position: relative;
+  width: 99.9%;
+  height: 99.9%;
+}
+
+:host >>> .lineChart__wrap p-chart div{
+  display: block;
+  height: 100%;
+}

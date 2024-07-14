@@ -3,5 +3,6 @@
     <span class="chart__department">{{labelInside.department}}</span><br>
     <span class="chart__percents">{{labelInside.percents}}</span>
   </div>
-  <p-chart class="chart__" type="doughnut" [data]="metadata" [options]="options" />
+  <p-chart type="doughnut" (click)="modalVisible = true" [data]="metadata" [options]="options" />
+  <modal-bar-chart [visible]="modalVisible" (visibleChange)="modalVisible = false"/>
 </div>

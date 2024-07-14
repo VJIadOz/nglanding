@@ -1,0 +1,7 @@
+:host >>> .p-inputtext {
+  background: #565656;
+  border-color: #939393;
+}
+:host >>> .p-datepicker{
+  transform: translateX(-10%);
+}

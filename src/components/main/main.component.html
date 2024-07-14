@@ -9,12 +9,13 @@
       <li class="violationServices__item">
         <main-doughnut-chart [data]="item"></main-doughnut-chart>
       </li>
+      <li class="violationServices__itemDiv"></li>
       }
     </ul>
   </section>
   <section class="section violationRoads">
     <h2 class="section-title violationRoads__title">Распределение индикаторов нарушений по дорогам</h2>
-    <main-line-chart [data]="chartsRoadData"></main-line-chart>
+    <main-bar-chart [data]="chartsRoadData"></main-bar-chart>
   </section>
   <section class="section violationRange">
     <h2 class="section-title violationRange__title">Динамика изменения индикаторов красной зоны за последние 6 месяцев -
@@ -31,7 +32,7 @@
         <li class="violationRange__item violationRange__item_5">Повторные отступления ВИКС IV степени за квартал</li>
       </ol>
       <div class="violationRange__chartWrap">
-        <p-chart class="violationRange__chart" type="line" [data]="chartsRedZone" [options]="chartsRedOptions" />
+        <main-line-chart [data]="chartsRedZone"></main-line-chart>
       </div>
     </div>
   </section>

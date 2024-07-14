@@ -1,9 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import "primeng/resources/primeng.css";
-@import "primeicons/primeicons.css";
 @import url('../src/assets/custom-theme.css');
+@import "primeng/resources/primeng.min.css";
+@import "primeicons/primeicons.css";
 
-
+:root{
+  --chart-color-1: #FF6900;
+  --chart-color-2: #E21A1A;
+  --chart-color-3: #78D64B;
+  --chart-color-4: #2F87B6;
+  --chart-color-5: #31B3E4;
+  --chart-color-6: #FF6666;
+  --chart-color-7: #0066A1;
+}
 
 
 @font-face {
@@ -27,6 +35,7 @@
 *,
 *::before,
 *::after{
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
