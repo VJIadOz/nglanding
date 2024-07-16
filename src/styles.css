@@ -3,7 +3,7 @@
 @import "primeng/resources/primeng.min.css";
 @import "primeicons/primeicons.css";
 
-:root{
+:root {
   --chart-color-1: #FF6900;
   --chart-color-2: #E21A1A;
   --chart-color-3: #78D64B;
@@ -17,7 +17,7 @@
 @font-face {
   font-family: "Verdana";
   src: url(assets/Verdana-Bold.woff2) format("woff2"),
-      url(assets/Verdana-Bold.woff) format("woff");
+    url(assets/Verdana-Bold.woff) format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -26,7 +26,7 @@
 @font-face {
   font-family: "Verdana";
   src: url(assets/Verdana.woff2) format("woff2"),
-      url(assets/Verdana.woff) format("woff");
+    url(assets/Verdana.woff) format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -34,7 +34,7 @@
 
 *,
 *::before,
-*::after{
+*::after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

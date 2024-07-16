@@ -1,4 +1,5 @@
 export interface Options {
+  rotation?: number,
   cutout?: string,
   pointStyle?: boolean,
   plugins?: {
@@ -13,6 +14,8 @@ export interface Options {
     x?: {
       stacked?: boolean,
       ticks?: {
+        labelOffset?: number,
+        align?: string,
         color?: string,
         font?: {
           size?: number
@@ -36,6 +39,7 @@ export interface Options {
         padding?: number
       }
       ticks?: {
+        labelOffset?: number,
         color?: string,
         font?: {
           size?: number

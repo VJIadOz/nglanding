@@ -1,0 +1,8 @@
+<div class="chart">
+  <span class="chart__department">{{labelInside.department}}</span>
+  <div class="chart__digits">
+    <span class="chart__digit1">{{labelInside.digits1}}</span>/<span class="chart__digit2">{{labelInside.digits2}}</span>
+  </div>
+  <p-chart height="99%" width="99%" type="doughnut" [data]="metadata" [options]="options" />
+</div>
+

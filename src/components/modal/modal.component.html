@@ -1,22 +1,28 @@
-<p-dialog
-  [modal]="true"
-  [draggable]="false"
-  [visible]="visible"
-  [dismissableMask]="true"
-  [showHeader]="false"
-  styleClass="modal"
-  (visibleChange)="visibleChange.emit(false)"
-  >
-    <h2 class="modal__header">Детализированные графики показателей службы ЦД по дорогам</h2>
-    <div class="modal__chartsWrap">
-      <div class="modal__chartsTop">
-        <div class="modal__chartLeft">
-          <!-- <p-chart type="doughnut" [data]="metadata" [options]="options"/> -->
+<p-dialog [modal]="true" [draggable]="false" [visible]="visible" [dismissableMask]="true" [showHeader]="false"
+  [resizable]="false" styleClass="modal" (visibleChange)="changeVisibleModal.emit(false)">
+  <h2 class="modal__title">Детализированные графики показателей службы ЦД по дорогам</h2>
+  <div class="modal__chartsWrap">
+    <div class="modal__top">
+      <h3 class="modal__subtitle">ДО-24вц Отцепленных по коммерческим неисправностям</h3>
+      <div class="modal__content">
+        <div class="modal__contentLeft">
+          <modal-doughnut-chart [data]="metadataDoughnut1"></modal-doughnut-chart>
         </div>
-        <div class="modal__chartRight">
-          <p-chart type="bar" [data]="metadataBar" [options]="optionsBar" [plugins]="[chartDataLabelsPlugin]"/>
+        <div class="modal__contentRight">
+          <modal-bar-chart [data]="metadataBar1"></modal-bar-chart>
         </div>
       </div>
-      <div class="modal__chartsBottom"></div>
     </div>
+    <div class="modal__bottom">
+      <h3 class="modal__subtitle">ЦРБ, ПО-29 Выдано предупреждений, со скоростью 15км/ч с НМ (тек., Год)</h3>
+      <div class="modal__content">
+        <div class="modal__contentLeft">
+          <modal-doughnut-chart [data]="metadataDoughnut2"></modal-doughnut-chart>
+        </div>
+        <div class="modal__contentRight">
+          <modal-bar-chart [data]="metadataBar1"></modal-bar-chart>
+        </div>
+      </div>
+    </div>
+  </div>
 </p-dialog>

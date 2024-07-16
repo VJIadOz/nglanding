@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { ChartModule } from 'primeng/chart';
 import { Options } from "../charts-options";
+import { getColor } from "../getColor";
 
 @Component({
   selector: 'main-line-chart',
@@ -14,7 +15,7 @@ export class LineChartComponent implements OnInit {
   @Input() data!: { labels: Array<string>, datasets: Array<{ data: Array<number> }> }
   metadata!: { labels: Array<string>, datasets: Array<{ data: Array<number>, borderColor: string }> }
   options!: Options
-  colors: Array<string> = ["--chart-color-2", "--chart-color-1", "--chart-color-3", "--chart-color-5", "--chart-color-6"]
+  colors: Array<string> = ["red", "orange", "green", "lightCyan", "pink"]
 
   ngOnInit(): void {
     const documentStyle = getComputedStyle(document.documentElement);
@@ -25,9 +26,9 @@ export class LineChartComponent implements OnInit {
           data: item.data,
           fill:  {
             target: "origin",
-            above: documentStyle.getPropertyValue(this.colors[index])+"10",
+            above: getColor(this.colors[index])+"10",
           },
-          borderColor: documentStyle.getPropertyValue(this.colors[index]),
+          borderColor: getColor(this.colors[index]),
         })
       )
     }

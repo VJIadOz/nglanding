@@ -1,23 +1,73 @@
 :host>>>.modal {
   width: 90vw;
-  background-color: #414040;
+  height: 68vh;
+  border: 0;
 }
 
-.modal__header {
+:host>>>.p-dialog-content {
+  background-color: #414040;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+
+}
+
+.modal__chartsWrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CFD3D6;
+}
+
+.modal__bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.modal__title {
   margin: 0;
+  margin-bottom: 40px;
+  color: #fff;
   font-size: 16px;
   font-weight: 700;
+  text-align: center;
 }
 
-
-.modal__chartsTop {
+.modal__content {
   display: flex;
+  flex-grow: 1;
+  gap: 10px;
+
 }
 
-.modal__chartLeft {
-  flex-basis: 10%;
+.modal__contentLeft {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal__chartRight {
-  flex-basis: 90%;
+.modal__contentRight {
+  min-width: 500px;
+  flex: 3;
+}
+
+.modal__subtitle {
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
 }

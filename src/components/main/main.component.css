@@ -161,7 +161,7 @@
 }
 
 .violationRange__chartWrap {
-  -webkit-box-flex: 1.5;
-  -ms-flex: 1.5;
+  -webkit-box-flex: 1.8;
+  -ms-flex: 1.8;
   flex: 1.8;
 }
